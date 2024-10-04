@@ -8,7 +8,12 @@ import { auth } from "./controllers/auth.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ems-adityaparasharadiadi12gmailcoms-projects.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
