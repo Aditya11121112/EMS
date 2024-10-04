@@ -24,7 +24,7 @@ const Salary_Detail = () => {
   }, [navigate, employeeId]);
 
   const fetchSalaryDetails = (id) => {
-    axios.get(`http://localhost:4000/api/auth/get-salary-details?employeeId=${id}`)
+    axios.get(`ems-backend-six.vercel.app/api/auth/get-salary-details?employeeId=${id}`)
       .then(response => {
         if (response.data.success) {
           console.log("Salary details response:", response.data.salary);
@@ -66,7 +66,7 @@ const Salary_Detail = () => {
                     <td className="border border-gray-300 p-2">
                       {salary.employeeId?.image ? (
                         <img
-                          src={`http://localhost:4000/uploads/${salary.employeeId.image}`}
+                          src={`ems-backend-six.vercel.app/uploads/${salary.employeeId.image}`}
                           alt={salary.employeeId.employeeId}
                           className="w-12 h-12 rounded-full"
                         />

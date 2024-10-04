@@ -17,7 +17,7 @@ const Employee = () => {
     const token = localStorage.getItem('access_token');
 
     // Fetch user data
-    axios.post("http://localhost:4000/api/auth/verify", {}, {
+    axios.post("ems-backend-six.vercel.app/api/auth/verify", {}, {
       headers: {
         authorization: `Bearer ${token}`
       }
@@ -34,7 +34,7 @@ const Employee = () => {
 
   // Fetch leaves function with user ID as parameter
   const fetchLeaves = (userId) => {
-    axios.get(`http://localhost:4000/api/auth//leaves-employee?userId=${userId}`).then((resp) => {
+    axios.get(`ems-backend-six.vercel.app/api/auth//leaves-employee?userId=${userId}`).then((resp) => {
       // Ensure resp.data.filteredLeaves is an array
       
       setLeaves(

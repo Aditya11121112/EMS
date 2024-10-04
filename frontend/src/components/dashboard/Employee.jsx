@@ -10,7 +10,7 @@ const Employee = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/auth/get-employees')
+    axios.get('ems-backend-six.vercel.app/api/auth/get-employees')
       .then(response => {
         if (response.data.success) {
           setEmployees(response.data.data);
@@ -23,7 +23,7 @@ const Employee = () => {
     setSearchText(e.target.value);
 
     // Call backend API to search employees
-    axios.get(`http://localhost:4000/api/auth/search-employees?query=${e.target.value}`)
+    axios.get(`ems-backend-six.vercel.app/api/auth/search-employees?query=${e.target.value}`)
       .then(response => {
         if (response.data.success) {
           setEmployees(response.data.data);
@@ -105,7 +105,7 @@ const Employee = () => {
                     {/* Image */}
                     <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">
                       {employee.image ? (
-                        <img src={`http://localhost:4000/uploads/${employee.image}`} alt={employee.employeeId} className="w-12 h-12 rounded-full" />
+                        <img src={`ems-backend-six.vercel.app/uploads/${employee.image}`} alt={employee.employeeId} className="w-12 h-12 rounded-full" />
                       ) : (
                         "No Image"
                       )}
