@@ -11,6 +11,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  console.log("dsfjhskdjf");
+});
+
 app.use("/api/auth", router);
 app.use("/api/auth", auth);
 app.use("/uploads", express.static("./uploads"));
