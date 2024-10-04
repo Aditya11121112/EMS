@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  console.log("dsfjhskdjf");
+  res.send("hellow");
 });
 
 app.use("/api/auth", router);
