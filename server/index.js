@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://ems-adityaparasharadiadi12gmailcoms-projects.vercel.app",
+    origin: "https://ems-self.vercel.app",
     credentials: true,
   })
 );
