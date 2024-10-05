@@ -48,7 +48,7 @@ const EmpLeave = () => {
 const fetchEmployee = (id)=>{
   //console.log("whats  the id ",id)
   axios
-      .get(`https://ems-backend-six.vercel.app/api/auth/get-employee-byid?id=${id}`)
+      .get(`https://ems-backend-six.vercel.app/api/auth/get-employee-byuserid?id=${id}`)
       .then((response) => {
        // console.log("response data",response.data)
         const empData = response.data.data; // Assuming employee details are returned
