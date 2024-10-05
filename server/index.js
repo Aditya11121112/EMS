@@ -4,17 +4,23 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import { router } from "./controllers/general.js";
 import { auth } from "./controllers/auth.js";
+import path from "path";
 //import { register_user } from "./userRegisteration.js";
 
 const app = express();
 
 app.use(
   cors({
-    origin: '*',
+    origin: "*",
     credentials: true,
   })
 );
 app.use(express.json());
+
+const __dirname = path.resolve(); // Only needed if using ES6 modules (e.g., `import` statements)
+
+// Serve files from 'uploads' folder
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.get("/", (req, res) => {
   res.send("hellow");
