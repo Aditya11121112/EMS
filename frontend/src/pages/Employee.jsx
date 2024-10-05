@@ -34,7 +34,7 @@ const Employee = () => {
 
   // Fetch leaves function with user ID as parameter
   const fetchLeaves = (userId) => {
-    axios.get(`https://ems-backend-six.vercel.app/api/auth//leaves-employee?userId=${userId}`).then((resp) => {
+    axios.get(`https://ems-backend-six.vercel.app/api/auth/leaves-employee?userId=${userId}`).then((resp) => {
       // Ensure resp.data.filteredLeaves is an array
       
       setLeaves(
