@@ -26,7 +26,7 @@ const Emp_part_leave = () => {
   }, [empid, navigate]);
 
   const leaves_data = (id) => {
-    axios.get(`ems-backend-six.vercel.app/api/auth/leaves?userId=${id}`)
+    axios.get(`https://ems-backend-six.vercel.app/api/auth/leaves?userId=${id}`)
       .then((resp) => {
         if (!resp) {
           console.log('No response from the API.');
@@ -47,7 +47,7 @@ const Emp_part_leave = () => {
 
   // Handle saving the updated status
   const handleSaveStatus = (leaveId) => {
-    axios.put(`ems-backend-six.vercel.app/api/auth/updateLeaveStatus/${leaveId}`, {
+    axios.put(`https://ems-backend-six.vercel.app/api/auth/updateLeaveStatus/${leaveId}`, {
   
       status: newStatus,
     })

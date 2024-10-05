@@ -28,7 +28,7 @@ const Edit_Employee = () => {
     // Fetch the employee data from backend and populate the form
     const fetchEmployeeData = async () => {
       try {
-        const response = await axios.get(`hems-backend-six.vercel.app/api/auth/get-employee-id/${employeeId}`);
+        const response = await axios.get(`https://ems-backend-six.vercel.app/api/auth/get-employee-id/${employeeId}`);
         const employeeData = response.data.employee;
         
         // Set the form data with fetched employee info
@@ -62,7 +62,7 @@ const Edit_Employee = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`ems-backend-six.vercel.app/api/auth/update-employee/${employeeId}`, formData);
+      const response = await axios.put(`https://ems-backend-six.vercel.app/api/auth/update-employee/${employeeId}`, formData);
 
       if (response.data.success) {
         alert("Employee updated successfully!");

@@ -20,7 +20,7 @@ const EmpProfile = () => {
 
       try {
         const response = await axios.post(
-          "ems-backend-six.vercel.app/api/auth/employee-details",
+          "https://ems-backend-six.vercel.app/api/auth/employee-details",
           {},
           {
             headers: {
@@ -62,7 +62,7 @@ const EmpProfile = () => {
             <div className="w-full lg:w-1/3 flex justify-center mb-8 mt-4% lg:mb-0">
               {employeeDetails.image ? (
                 <img
-                  src={`ems-backend-six.vercel.app/uploads/${employeeDetails.image}`}
+                  src={`https://ems-backend-six.vercel.app/uploads/${employeeDetails.image}`}
                   alt="Employee"
                   className="w-48 h-48 rounded-full border-4 border-gray-200 shadow-lg"
                 />

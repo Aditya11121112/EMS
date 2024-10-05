@@ -22,7 +22,7 @@ const Department = () => {
     setUser(usernew || 'Guest');
 
     // Fetch departments from the backend
-    axios.get('ems-backend-six.vercel.app/api/auth/get-department')
+    axios.get('https://ems-backend-six.vercel.app/api/auth/get-department')
       .then((response) => {
         if (!response.data.success) {
           console.log("Error in backend fetching data");
@@ -42,7 +42,7 @@ const Department = () => {
 
   const handleDelete = (id) => {
     console.log("Delete department with id:", id);
-    axios.delete(`ems-backend-six.vercel.app/api/auth/delete-department/${id}`)
+    axios.delete(`https://ems-backend-six.vercel.app/api/auth/delete-department/${id}`)
       .then((response) => {
         console.log(response.data);
         if (!response.data.success) {
@@ -71,7 +71,7 @@ const Department = () => {
   };
 
   const handleSaveEdit = () => {
-    axios.put(`ems-backend-six.vercel.app/api/auth/edit-department/${editDepartmentId}`, editDepartmentData)
+    axios.put(`https://ems-backend-six.vercel.app/api/auth/edit-department/${editDepartmentId}`, editDepartmentData)
       .then((response) => {
         if (response.data.success) {
           setDepartments(departments.map(dep => 

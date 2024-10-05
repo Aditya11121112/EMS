@@ -22,7 +22,7 @@ const ADD_DEP = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('ems-backend-six.vercel.app/api/auth/add-department', {
+      const response = await axios.post('https://ems-backend-six.vercel.app/api/auth/add-department', {
         dep_name: depName,
         dep_desc: depDesc
       }, {

@@ -18,7 +18,7 @@ const EmpSalary = () => {
       console.log(token);
 
       // Verify the token via API call
-      axios.post("ems-backend-six.vercel.app/api/auth/leave", {}, {
+      axios.post("https://ems-backend-six.vercel.app/api/auth/leave", {}, {
         headers: {
           authorization: `Bearer ${token}`
         }
@@ -28,7 +28,7 @@ const EmpSalary = () => {
         setUser(usernew || 'Guest');
         
       //  fetchSalaryDetails(resp.data.user.id)
-        axios.get(`ems-backend-six.vercel.app/api/auth/get-employee-byuserid?id=${resp.data.user.id}`).then(
+        axios.get(`https://ems-backend-six.vercel.app/api/auth/get-employee-byuserid?id=${resp.data.user.id}`).then(
             (resp)=>{ 
              // console.log("somthing",resp.data.data)
               // console.log("response in employee",resp.data.data._id);
@@ -52,7 +52,7 @@ const EmpSalary = () => {
 
   const fetchSalaryDetails = (id) => {
     console.log("id",id)
-    axios.get(`ems-backend-six.vercel.app/api/auth/get-salary-details?employeeId=${id}`)
+    axios.get(`https://ems-backend-six.vercel.app/api/auth/get-salary-details?employeeId=${id}`)
       .then(response => {
         if (response.data.success) {
           
@@ -103,7 +103,7 @@ const EmpSalary = () => {
                     <td className="border border-gray-300 p-2">
                       {salary.employeeId?.image ? (
                         <img
-                          src={`ems-backend-six.vercel.app/${salary.employeeId.image}`}
+                          src={`https://ems-backend-six.vercel.app/${salary.employeeId.image}`}
                           alt={salary.employeeId.employeeId}
                           className="w-12 h-12 rounded-full"
                         />

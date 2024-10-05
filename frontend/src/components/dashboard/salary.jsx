@@ -25,7 +25,7 @@ const Salary = () => {
     setUser(usernew || 'Guest');
 
     // Fetch departments
-    axios.get('ems-backend-six.vercel.app/api/auth/get-department')
+    axios.get('https://ems-backend-six.vercel.app/api/auth/get-department')
       .then(response => {
         if (response.data.success) {
           setDepartments(response.data.user);
@@ -37,7 +37,7 @@ const Salary = () => {
   const handleDepartmentChange = (e) => {
     setSelectedDepartment(e.target.value);
     
-    axios.get(`ems-backend-six.vercel.app/api/auth/get-employees-dept?departmentId=${e.target.value}`)
+    axios.get(`https://ems-backend-six.vercel.app/api/auth/get-employees-dept?departmentId=${e.target.value}`)
       .then(response => {
         if (response.data.success) {
           // If returning a single employee
@@ -68,7 +68,7 @@ const Salary = () => {
     };
     console.log("salary data",salaryData)
     // Post request to update salary
-    axios.post('ems-backend-six.vercel.app/api/auth/update-salary', salaryData)
+    axios.post('https://ems-backend-six.vercel.app/api/auth/update-salary', salaryData)
       .then(response => {
         if (response.data.success) {
           console.log(response.data);

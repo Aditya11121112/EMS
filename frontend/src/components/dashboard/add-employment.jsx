@@ -33,7 +33,7 @@ const EmployeeForm = () => {
     // Fetch departments from backend
     const fetchDepartments = async () => {
       try {
-        const response = await axios.get("ems-backend-six.vercel.app/api/auth/get-department");
+        const response = await axios.get("https://ems-backend-six.vercel.app/api/auth/get-department");
         
         setDepartments(response.data.user);
       } catch (error) {
@@ -62,7 +62,7 @@ const EmployeeForm = () => {
     try {
         console.log(formData)
         const response = await axios.post(
-            "ems-backend-six.vercel.app/api/auth/add-employee",
+            "https://ems-backend-six.vercel.app/api/auth/add-employee",
             form, {
               headers: {
                 'Content-Type': 'multipart/form-data'

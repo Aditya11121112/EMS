@@ -26,7 +26,7 @@ const EmpLeave = () => {
       console.log(token);
 
       // Verify the token via API call
-      axios.post("ems-backend-six.vercel.app/api/auth/verify", {}, {
+      axios.post("https://ems-backend-six.vercel.app/api/auth/verify", {}, {
         headers: {
           authorization: `Bearer ${token}`
         }
@@ -48,7 +48,7 @@ const EmpLeave = () => {
 const fetchEmployee = (id)=>{
   //console.log("whats  the id ",id)
   axios
-      .get(`ems-backend-six.vercel.app/api/auth/get-employee-byid?id=${id}`)
+      .get(`https://ems-backend-six.vercel.app/api/auth/get-employee-byid?id=${id}`)
       .then((response) => {
        // console.log("response data",response.data)
         const empData = response.data.data; // Assuming employee details are returned
@@ -77,7 +77,7 @@ const handleSubmit = (e) => {
   };
 
   axios
-    .post("ems-backend-six.vercel.app/api/auth/create-leave", leaveData)
+    .post("https://ems-backend-six.vercel.app/api/auth/create-leave", leaveData)
     .then((response) => {
       if(response.data.success){
         alert("Leave request submitted successfully!");
