@@ -7,8 +7,8 @@ import { auth } from "./controllers/auth.js";
 import path from "path";
 //import { register_user } from "./userRegisteration.js";
 
-const app = express();
-
+// const app = express();
+const a = "ayusjh";
 app.use(
   cors({
     origin: "*",
